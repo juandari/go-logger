@@ -29,7 +29,7 @@ func (l *Logger) Debugf(format string, args ...any) {
 		l.output = os.Stdout
 	}
 	if l.threshold <= LevelDebug {
-		l.logf(format, args...)
+		l.logf("[Debug] "+format, args...)
 	}
 
 }
@@ -39,7 +39,7 @@ func (l *Logger) Infof(format string, args ...any) {
 		l.output = os.Stdout
 	}
 	if l.threshold <= LevelInfo {
-		l.logf(format, args...)
+		l.logf("[Info] "+format, args...)
 	}
 
 }
@@ -49,7 +49,7 @@ func (l *Logger) Errorf(format string, args ...any) {
 		l.output = os.Stdout
 	}
 	if l.threshold <= LevelError {
-		l.logf(format, args...)
+		l.logf("[Error] "+format, args...)
 	}
 }
 
